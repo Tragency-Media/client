@@ -402,6 +402,7 @@ export const loadProfile = (id) => async (dispatch) => {
     const {
       data: { profile },
     } = await profileRoute.get(`/user/${id}`);
+    console.log("🚀 ~ loadProfile ~ profile:", profile);
     // console.log(profile);
     dispatch({ type: LOAD_PROFILE, payload: { profile } });
   } catch (e) {

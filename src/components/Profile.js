@@ -7,6 +7,7 @@ import history from "../history";
 import PostModal from "./postModal";
 
 const Profile = ({ profile, loggedInUserId, loadProfile, updateProfile }) => {
+  console.log("🚀 ~ Profile ~ profile:", profile.username);
   useEffect(() => {
     loadProfile(
       history.location.pathname.split("/")[
@@ -19,6 +20,7 @@ const Profile = ({ profile, loggedInUserId, loadProfile, updateProfile }) => {
   const [username, setUsername] = useState(
     profile.user?.username || "username"
   );
+  console.log("🚀 ~ Profile ~ username:", username);
   const [image, setImage] = useState(profile.user?.avatar);
   const [showImage, setShowImage] = useState(null);
   const [bio, setBio] = useState(profile.bio || "");
