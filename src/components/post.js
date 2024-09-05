@@ -117,10 +117,16 @@ const Post = ({
             >
               <li
                 className="sub-headings"
-                onClickCapture={() => {
+                onClickCapture={async () => {
                   console.log(showOptions);
-                  setShowOptions(true);
-                  setShow(false);
+
+                  await navigator.share({
+                    title: `Remotely connecting like minded travelers'. Come & connect with fellow travelers & post cool travel experience to become travel influencer. Come Take a look at this awesome post. 
+          Caption: ${post.title}`,
+                    url: `${location.origin}/post/${post._id}`,
+                  });
+                  // setShowOptions(true);
+                  // setShow(false);
                 }}
               >
                 Share
@@ -206,14 +212,14 @@ const Post = ({
         </p> */}
       </section>
       {/* {showOptions ? "hello i am " : ""} */}
-      {showOptions && (
+      {/* {showOptions && (
         <ShareModal
           setActive={setShowOptions}
           caption={post.title}
           id={post._id}
           tags={post.tags}
         />
-      )}
+      )} */}
       {t !== "blogs" ? <p className="sub-headings">{post.title}</p> : ""}
       <br />
       <p className="sub-headings">

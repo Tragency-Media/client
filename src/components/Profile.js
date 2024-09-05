@@ -7,7 +7,7 @@ import history from "../history";
 import PostModal from "./postModal";
 
 const Profile = ({ profile, loggedInUserId, loadProfile, updateProfile }) => {
-  console.log("🚀 ~ Profile ~ profile:", profile.username);
+  console.log("🚀 ~ Profile ~ profile:", profile?.username);
   useEffect(() => {
     loadProfile(
       history.location.pathname.split("/")[

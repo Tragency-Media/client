@@ -47,21 +47,21 @@ const ShareModal = ({
         }}
       >
         <TwitterShareButton
-          url={`https://tragency-media.herokuapp.com/post/${id}`}
+          url={`${window.location.origin}/post/${id}`}
           quote={caption}
           hashtag={tags.split(" ")}
         >
           <TwitterIcon size={64} round={true} />
         </TwitterShareButton>
         <FacebookShareButton
-          url={`https://tragency-media.herokuapp.com/post/${id}`}
+          url={`${window.location.origin}/post/${id}`}
           quote={caption}
           hashtag={tags}
         >
           <FacebookIcon size={64} round={true} />
         </FacebookShareButton>
         <WhatsappShareButton
-          url={`https://tragency-media.herokuapp.com/post/${id}`}
+          url={`${window.location.origin}/post/${id}`}
           title={`Remotely connecting like minded travelers'. Come & connect with fellow travelers & post cool travel experience to become travel influencer. Come Take a look at this awesome post. 
           Caption: ${caption}`}
         >
